@@ -1,6 +1,7 @@
 class Place:
 
-    def __init__(self, capacity: int, open_from: int, open_to: int, contamination_length: int):
+    def __init__(self, name: str,  capacity: int, open_from: int, open_to: int, contamination_length: int):
+        self.name = name
         self.max_capacity = capacity
         self.currently_occupying = 0
         self.is_contaminated = False
@@ -28,3 +29,10 @@ class Place:
         if self.last_contamination_time is not None and (self.timer - self.last_contamination_time) % 24 < self.timer:
             self.decontaminate()
         self.timer += 1
+        self.timer = self.timer % 24
+
+    def __str__(self):
+        return f"<{self.name} ({self.currently_occupying}/{self.max_capacity})>"
+
+    def __repr__(self):
+        return self.__str__()
