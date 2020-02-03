@@ -18,7 +18,7 @@ zurich.create_agents(
 zurich.assign_work_places_and_schools()
 zurich.assign_extracurricular_activities()
 zurich.spread_virus(0.05)
-for _ in range(8 * 7 * 24):
+for _ in range(2 * 24):
     zurich.update_timers()
 
 fig, ax = plt.subplots()
@@ -32,6 +32,8 @@ for home in zurich.homes:
 occ_avg = []
 for vals in zip(*occ):
     occ_avg.append(sum(vals)/len(vals))
+
+print(len(zurich.schools))
 fig, ax = plt.subplots()
 ax.plot(occ_avg)
 plt.show()

@@ -50,7 +50,7 @@ class Town:
             currently_created += capacity
 
     def create_shopping_centres(self):
-        no_agents = 4 * self.no_homes
+        no_agents = 2 * self.no_homes
         currently_created = 0
         while currently_created < no_agents:
             capacity = random.randint(100, 400)
@@ -58,7 +58,7 @@ class Town:
             currently_created += capacity
 
     def create_meeting_places(self):
-        no_agents = 4 * self.no_homes
+        no_agents = 2 * self.no_homes
         currently_created = 0
         while currently_created < no_agents:
             capacity = random.randint(20, 70)
@@ -66,7 +66,7 @@ class Town:
             currently_created += capacity
 
     def create_gyms(self):
-        no_agents = 4 * self.no_homes
+        no_agents = 2 * self.no_homes
         currently_created = 0
         while currently_created < no_agents:
             capacity = random.randint(20, 70)

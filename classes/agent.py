@@ -5,7 +5,6 @@ from classes.place import Place
 
 
 class Agent:
-
     routine_places: List[Place]
     id: int = 0
 
@@ -40,7 +39,7 @@ class Agent:
         if self.is_sick:
             current_place = self.routine_places[self.current_place]
             current_place.contaminate()
-        if self.timer >= self.next_routine_time:
+        if (self.timer >= self.next_routine_time != 0) or (self.timer == 0 and self.next_routine_time == 0):
             self.routine_places[self.current_place].currently_occupying -= 1
             self.current_place += 1
             self.current_place %= len(self.routine_times)
